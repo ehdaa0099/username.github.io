@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شخصيات حققت نجاحات عالمية رغم إصابتها بالتوحد | انتظار</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4E4D3; --navy-deep:#0F2740; --navy:#173654;
+    --terracotta:#D97B3F; --teal:#5C879E; --ink:#2A241F; --white:#FFFCF9; --line: rgba(23,54,84,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--ink);font-family:'Cairo',sans-serif;min-height:100vh;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+
+  header.top{background:var(--navy-deep);color:var(--cream);padding:16px 0;font-size:14px;}
+  header.top .wrap{display:flex;justify-content:space-between;align-items:center;}
+  header.top a.back{opacity:.85;font-weight:600;}
+  header.top a.back:hover{opacity:1;}
+
+  main{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:70px 24px 90px;text-align:center;
+  }
+  .tag{
+    display:inline-block;background:var(--terracotta);color:var(--white);
+    font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:22px;
+  }
+  h1{
+    font-family:'Tajawal';font-size:clamp(26px,4.5vw,40px);font-weight:900;
+    color:var(--navy-deep);line-height:1.4;margin-bottom:42px;max-width:760px;
+  }
+  .video-frame{
+    width:100%;max-width:800px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+    box-shadow:0 30px 60px rgba(23,54,84,0.22);
+    position:relative;display:block;
+  }
+  .video-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .video-frame .play-overlay{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(15,39,64,0.35);
+  }
+  .video-frame .play-btn{
+    width:84px;height:84px;border-radius:50%;background:rgba(217,123,63,0.95);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+  .video-frame .play-btn::before{
+    content:"";border-style:solid;border-width:16px 0 16px 26px;
+    border-color:transparent transparent transparent white;margin-right:-4px;
+  }
+  .video-hint{margin-top:18px;font-size:14px;color:var(--teal);}
+
+  footer{background:var(--navy-deep);color:#C9BBA8;padding:26px 0;text-align:center;font-size:13px;opacity:.7;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span>فيديو جراف — انتظار</span>
+    <a href="intidhar-website.html" class="back">→ رجوع للرئيسية</a>
+  </div>
+</header>
+
+<main>
+  <span class="tag">فيديو جراف ملهم</span>
+  <h1>شخصيات حققت نجاحات عالمية رغم إصابتها بالتوحد</h1>
+
+  <a class="video-frame" href="https://youtu.be/TRbRMXystP4?si=UCOPlCgCRRhGyfhB" target="_blank" rel="noopener">
+    <img src="https://img.youtube.com/vi/TRbRMXystP4/maxresdefault.jpg"
+         onerror="this.onerror=null;this.src='https://img.youtube.com/vi/TRbRMXystP4/hqdefault.jpg';"
+         alt="شخصيات حققت نجاحات عالمية رغم إصابتها بالتوحد">
+    <div class="play-overlay"><div class="play-btn"></div></div>
+  </a>
+  <div class="video-hint">اضغط على الفيديو للمشاهدة على يوتيوب ↗</div>
+</main>
+
+<footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+</body>
+</html>

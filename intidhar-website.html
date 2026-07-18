@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>انتظار | منصة رقمية تُعنى بمعاناة المصابين بالتوحد في ليبيا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4E4D3;
+    --cream-dark:#EAD3BB;
+    --navy:#173654;
+    --navy-deep:#0F2740;
+    --terracotta:#D97B3F;
+    --terracotta-light:#F0A868;
+    --teal:#5C879E;
+    --ink:#2A241F;
+    --white:#FFFCF9;
+    --line: rgba(23,54,84,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Cairo',sans-serif;
+    line-height:1.8;
+  }
+  h1,h2,h3,.display{
+    font-family:'Tajawal',sans-serif;
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* ============ PUZZLE ICON (signature element) ============ */
+  .puzzle{
+    width:14px;height:14px;
+    display:inline-block;
+    background:var(--terracotta);
+    -webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M35 0h20a10 10 0 0 1 0 20h-3a5 5 0 0 0 0 10h3a10 10 0 0 1 0 20h-20v-3a5 5 0 0 0-10 0v3H0V50h3a5 5 0 0 0 0-10H0V20h25v-3a5 5 0 0 1 10 0v3z'/></svg>");
+    mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M35 0h20a10 10 0 0 1 0 20h-3a5 5 0 0 0 0 10h3a10 10 0 0 1 0 20h-20v-3a5 5 0 0 0-10 0v3H0V50h3a5 5 0 0 0 0-10H0V20h25v-3a5 5 0 0 1 10 0v3z'/></svg>");
+    mask-size:contain;-webkit-mask-size:contain;
+    mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;
+  }
+
+  /* ============ TOP BAR (university branding) ============ */
+  .topbar{
+    background:var(--navy-deep);
+    color:#EFE2D2;
+    font-size:13px;
+    padding:9px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .topbar .tags{display:flex;gap:18px;opacity:0.85;}
+
+  /* ============ NAV ============ */
+  header.nav{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:44px;height:44px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--terracotta-light), var(--terracotta) 70%);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--white);font-family:'Tajawal';font-weight:900;font-size:20px;
+    flex-shrink:0;
+  }
+  .brand-text .name{font-family:'Tajawal';font-weight:900;font-size:22px;color:var(--navy-deep);}
+  .brand-text .sub{font-size:11px;color:var(--teal);letter-spacing:.5px;}
+  nav.menu ul{display:flex;gap:2px;flex-wrap:wrap;}
+  nav.menu a{
+    font-size:15px;font-weight:600;color:var(--navy);
+    padding:8px 14px;border-radius:20px;transition:.2s;
+  }
+  nav.menu a:hover, nav.menu a.active{background:var(--navy-deep);color:var(--cream);}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;overflow:hidden;padding:70px 0 90px;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 700px 500px at 85% 15%, rgba(217,123,63,0.16), transparent 60%),
+      radial-gradient(ellipse 600px 500px at 10% 90%, rgba(92,135,158,0.18), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;color:var(--navy-deep);
+    background:rgba(23,54,84,0.08);
+    padding:6px 14px;border-radius:20px;margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(48px,7vw,88px);
+    font-weight:900;color:var(--navy-deep);
+    line-height:1;margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:19px;color:var(--ink);max-width:520px;margin-bottom:32px;opacity:.85;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 28px;border-radius:8px;
+    font-weight:700;font-size:15px;transition:.2s;
+  }
+  .btn-primary{background:var(--navy-deep);color:var(--cream);}
+  .btn-primary:hover{background:var(--terracotta);}
+  .btn-ghost{border:1.5px solid var(--navy-deep);color:var(--navy-deep);}
+  .btn-ghost:hover{background:var(--navy-deep);color:var(--cream);}
+
+  /* Hero illustration */
+  .hero-art{position:relative;height:460px;}
+  .hero-art svg{width:100%;height:100%;}
+  .hero-art img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    border-radius:20px;
+    box-shadow:0 30px 60px rgba(23,54,84,0.25);
+  }
+  .hero-art::after{
+    content:"";position:absolute;inset:0;border-radius:20px;
+    background:linear-gradient(180deg, transparent 60%, rgba(15,39,64,0.35) 100%);
+    pointer-events:none;
+  }
+
+  /* ============ MISSION STRIP ============ */
+  .mission{background:var(--navy-deep);color:var(--cream);padding:38px 0;}
+  .mission .wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+  .mission p{font-size:17px;flex:1;min-width:280px;opacity:.92;}
+  .mission .stat{text-align:center;}
+  .mission .stat b{display:block;font-family:'Tajawal';font-size:30px;color:var(--terracotta-light);}
+  .mission .stat span{font-size:12px;opacity:.75;}
+
+  /* ============ SECTION HEADERS ============ */
+  section{padding:80px 0;}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:16px;}
+  .sec-head h2{font-size:34px;color:var(--navy-deep);font-weight:900;display:flex;align-items:center;gap:10px;}
+  .sec-head p{color:var(--teal);font-size:15px;}
+
+  /* ============ CATEGORY GRID ============ */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cat-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:30px 26px;position:relative;transition:.25s;overflow:hidden;
+  }
+  .cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(23,54,84,0.1);}
+  .cat-card .icon{
+    width:46px;height:46px;border-radius:12px;margin-bottom:18px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;
+  }
+  .cat-card h3{font-size:19px;color:var(--navy-deep);margin-bottom:8px;}
+  .cat-card p{font-size:14px;color:var(--ink);opacity:.75;}
+  .cat-card .count{
+    position:absolute;top:26px;left:26px;font-family:'Tajawal';font-weight:900;
+    font-size:13px;color:var(--line);
+  }
+  .c1 .icon{background:#E8DDCF;color:var(--terracotta);}
+  .c2 .icon{background:#DCE7EC;color:var(--teal);}
+  .c3 .icon{background:#173654;color:var(--terracotta-light);}
+  .c4 .icon{background:#F0DDCB;color:var(--navy-deep);}
+  .c5 .icon{background:#E4E9DE;color:#6E8560;}
+  .c6 .icon{background:#EAD9E4;color:#9C5C81;}
+
+  /* ============ FEATURED POSTS (square icon cards) ============ */
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .post-card{
+    background:var(--white);border-radius:16px;border:1px solid var(--line);
+    aspect-ratio:1/1;padding:26px;display:flex;flex-direction:column;transition:.22s;
+  }
+  .post-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(23,54,84,0.1);}
+  .post-card-link{text-decoration:none;color:inherit;display:block;}
+  .post-icon{
+    width:54px;height:54px;border-radius:14px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;
+  }
+  .icon-tahqiq{background:#173654;color:var(--terracotta-light);}
+  .icon-maqal{background:#DCE7EC;color:var(--teal);}
+  .icon-akhbar{background:#E8DDCF;color:var(--terracotta);}
+  .icon-hadith{background:#EAD9E4;color:#9C5C81;}
+  .icon-taqrir{background:#F0DDCB;color:var(--navy-deep);}
+  .icon-infographic{background:#E4E9DE;color:#6E8560;}
+  .icon-video{background:#173654;color:var(--terracotta-light);}
+
+  .post-card .tag{font-size:11.5px;color:var(--terracotta);font-weight:700;margin-bottom:8px;}
+  .post-card h3{font-size:16.5px;color:var(--navy-deep);line-height:1.5;flex:1;}
+  .post-meta{margin-top:12px;font-size:12px;color:var(--teal);display:flex;gap:8px;flex-wrap:wrap;}
+
+  /* ============ ABOUT / FOOTER INFO ============ */
+  .about{background:var(--cream-dark);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about h2{font-size:32px;color:var(--navy-deep);margin-bottom:18px;}
+  .about p{opacity:.85;margin-bottom:16px;font-size:15.5px;}
+  .credit-box{
+    background:var(--white);border-radius:14px;padding:30px;border:1px solid var(--line);
+  }
+  .credit-box .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14.5px;}
+  .credit-box .row:last-child{border-bottom:none;}
+  .credit-box .row b{color:var(--navy-deep);}
+  .credit-box .row span{color:var(--teal);}
+
+  footer{background:var(--navy-deep);color:#C9BBA8;padding:50px 0 24px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  footer .f-brand{font-family:'Tajawal';font-weight:900;font-size:22px;color:var(--cream);margin-bottom:8px;}
+  footer .f-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;}
+  footer .f-bottom{
+    margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);
+    text-align:center;font-size:12.5px;opacity:.6;
+  }
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{height:280px;order:-1;}
+    nav.menu{display:none;}
+    .cat-grid{grid-template-columns:1fr 1fr;}
+    .post-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .mission .wrap{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tags">
+      <span>جامعة بنغازي</span>
+      <span>كلية الإعلام — قسم الصحافة والنشر</span>
+    </div>
+    <div>مشروع تخرج 2026</div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <div class="brand-mark">ا</div>
+      <div class="brand-text">
+        <div class="name">انتظار</div>
+        <div class="sub">صوت رقمي لمعاناة التوحد في ليبيا</div>
+      </div>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#" class="active" data-filter="all" onclick="return filterPosts('all', this)">الرئيسية</a></li>
+        <li><a href="#latest" data-filter="akhbar" onclick="return filterPosts('akhbar', this)">أخبار</a></li>
+        <li><a href="#latest" data-filter="maqal" onclick="return filterPosts('maqal', this)">مقالات</a></li>
+        <li><a href="#latest" data-filter="tahqiq" onclick="return filterPosts('tahqiq', this)">تحقيقات</a></li>
+        <li><a href="#latest" data-filter="hadith" onclick="return filterPosts('hadith', this)">حديث صحفي</a></li>
+        <li><a href="#latest" data-filter="taqrir" onclick="return filterPosts('taqrir', this)">تقارير</a></li>
+        <li><a href="#latest" data-filter="infographic" onclick="return filterPosts('infographic', this)">إنفوجراف</a></li>
+        <li><a href="#latest" data-filter="video" onclick="return filterPosts('video', this)">فيديو جراف</a></li>
+        <li><a href="#about">من نحن</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="puzzle"></span> منصة رقمية توثيقية</div>
+      <h1>انتظار</h1>
+      <p class="lead">
+        مدونة صحفية تُعنى بواقع المصابين بالتوحد في ليبيا، بين معاناة الأهالي،
+        غياب الإحصائيات، وقصص أمل تستحق أن تُروى.
+      </p>
+      <div class="hero-ctas">
+        <a href="#cats" class="btn btn-primary">تصفّح المواد الصحفية</a>
+        <a href="#about" class="btn btn-ghost">عن المشروع</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img src="assets/hero-cover.jpeg" alt="انتظار - منصة رقمية عن التوحد في ليبيا">
+    </div>
+  </div>
+</section>
+
+<div class="mission">
+  <div class="wrap">
+    <p>منصة "انتظار" مشروع تخرج بقسم الصحافة والنشر — كلية الإعلام، جامعة بنغازي، يجمع بين التوثيق الصحفي والسرد الإنساني لتقديم صورة شاملة عن واقع التوحد في ليبيا.</p>
+    <div class="stat"><b>٨</b><span>مواد صحفية</span></div>
+    <div class="stat"><b>٦</b><span>أقسام رئيسية</span></div>
+    <div class="stat"><b>٢٠٢٦</b><span>سنة الإصدار</span></div>
+  </div>
+</div>
+
+<section id="cats">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="puzzle"></span> أقسام المنصة</h2>
+      <p>ستة أبواب صحفية، كل باب يقارب التوحد من زاوية مختلفة</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card c1" style="cursor:pointer" onclick="filterPosts('akhbar')">
+        <div class="count">٠١</div>
+        <div class="icon">📰</div>
+        <h3>أخبار</h3>
+        <p>مستجدات علمية وبرامج محلية، من اكتشافات العلاج إلى تطوير كوادر مركز بنغازي للتوحد.</p>
+      </div>
+      <div class="cat-card c2" style="cursor:pointer" onclick="filterPosts('maqal')">
+        <div class="count">٠٢</div>
+        <div class="icon">✍️</div>
+        <h3>مقالات</h3>
+        <p>من أهمية الكشف المبكر إلى قصة أخت شاب توحدي، بأسلوب تحليلي وسردي إنساني.</p>
+      </div>
+      <div class="cat-card c3" style="cursor:pointer" onclick="filterPosts('tahqiq')">
+        <div class="count">٠٣</div>
+        <div class="icon">🔍</div>
+        <h3>تحقيقات</h3>
+        <p>الانتهاكات داخل المراكز، غياب الإحصائيات والرقابة، وضعف الحماية القانونية.</p>
+      </div>
+      <div class="cat-card c4" style="cursor:pointer" onclick="filterPosts('taqrir')">
+        <div class="count">٠٤</div>
+        <div class="icon">📊</div>
+        <h3>تقارير</h3>
+        <p>مبادرة مؤسسة خليفة الدولية ودورها في دعم الأسر عبر برامج إنسانية.</p>
+      </div>
+      <div class="cat-card c5" style="cursor:pointer" onclick="filterPosts('infographic')">
+        <div class="count">٠٥</div>
+        <div class="icon">🧩</div>
+        <h3>إنفوجراف</h3>
+        <p>تصحيح المفاهيم الخاطئة، أنواع ودرجات التوحد، وعوامل دقة الإحصائيات في ليبيا.</p>
+      </div>
+      <div class="cat-card c6" style="cursor:pointer" onclick="filterPosts('video')">
+        <div class="count">٠٦</div>
+        <div class="icon">🎬</div>
+        <h3>فيديو جراف</h3>
+        <p>قصص ملهمة لنجاحات رغم الإصابة، وتوثيق لحالات غياب لم تعد إلى بيوتها.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="latest" style="background:var(--white);padding-top:60px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="puzzle"></span> أحدث المواد</h2>
+      <p>اضغط على أي قسم بالأعلى لعرض مواده فقط</p>
+    </div>
+    <div class="post-grid" id="post-grid">
+      <a href="tahqiq.html" class="post-card-link" data-cat="tahqiq">
+      <div class="post-card">
+        <div class="post-icon icon-tahqiq">🔍</div>
+        <div class="tag">تحقيق صحفي</div>
+        <h3>المصابون بالتوحد بين مطرقة الإهمال وسندان العنف</h3>
+        <div class="post-meta"><span>~٩ دقائق</span></div>
+      </div>
+      </a>
+      <a href="maqal.html" class="post-card-link" data-cat="maqal">
+      <div class="post-card">
+        <div class="post-icon icon-maqal">✍️</div>
+        <div class="tag">مقال سردي</div>
+        <h3>لا يراهم أحد</h3>
+        <div class="post-meta"><span>~٣ دقائق</span></div>
+      </div>
+      </a>
+      <a href="khabar-iktishaf.html" class="post-card-link" data-cat="akhbar">
+      <div class="post-card">
+        <div class="post-icon icon-akhbar">📰</div>
+        <div class="tag">أخبار</div>
+        <h3>اكتشاف جديد قد يمهد لعلاج التوحد</h3>
+        <div class="post-meta"><span>~١ دقيقة</span></div>
+      </div>
+      </a>
+      <a href="khabar-barnamaj.html" class="post-card-link" data-cat="akhbar">
+      <div class="post-card">
+        <div class="post-icon icon-akhbar">📰</div>
+        <div class="tag">أخبار</div>
+        <h3>إطلاق برنامج لتطوير الكوادر بمركز بنغازي للتوحد</h3>
+        <div class="post-meta"><span>~١ دقيقة</span></div>
+      </div>
+      </a>
+      <a href="hadith.html" class="post-card-link" data-cat="hadith">
+      <div class="post-card">
+        <div class="post-icon icon-hadith">🎙️</div>
+        <div class="tag">حديث صحفي</div>
+        <h3>حديث مع د. نزيهة سليمان حول اضطراب طيف التوحد</h3>
+        <div class="post-meta"><span>فيديو</span></div>
+      </div>
+      </a>
+      <a href="taqrir.html" class="post-card-link" data-cat="taqrir">
+      <div class="post-card">
+        <div class="post-icon icon-taqrir">📊</div>
+        <div class="tag">تقرير</div>
+        <h3>تقرير عن حملة أطفال ليبيا أولاً</h3>
+        <div class="post-meta"><span>فيديو</span></div>
+      </div>
+      </a>
+      <a href="infographics.html" class="post-card-link" data-cat="infographic">
+      <div class="post-card">
+        <div class="post-icon icon-infographic">🧩</div>
+        <div class="tag">إنفوجراف</div>
+        <h3>التوحد بالأرقام والمفاهيم</h3>
+        <div class="post-meta"><span>عرض بصري</span></div>
+      </div>
+      </a>
+      <a href="fidiugraf-mulhim.html" class="post-card-link" data-cat="video">
+      <div class="post-card">
+        <div class="post-icon icon-video">🎬</div>
+        <div class="tag">فيديو جراف</div>
+        <h3>شخصيات حققت نجاحات عالمية رغم إصابتها بالتوحد</h3>
+        <div class="post-meta"><span>فيديو</span></div>
+      </div>
+      </a>
+      <a href="fidiugraf-tawthiqi.html" class="post-card-link" data-cat="video">
+      <div class="post-card">
+        <div class="post-icon icon-video">🎬</div>
+        <div class="tag">فيديو جراف توثيقي</div>
+        <h3>مصابون بالتوحد خرجوا ولم يعودوا</h3>
+        <div class="post-meta"><span>فيديو</span></div>
+      </div>
+      </a>
+    </div>
+    <p id="empty-msg" style="display:none;text-align:center;color:var(--teal);padding:40px 0;">لا توجد مواد بهذا القسم حاليًا.</p>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>عن المشروع</h2>
+      <p>
+        "انتظار" منصة رقمية تُعنى بمعاناة المصابين بالتوحد في ليبيا، تجمع بين
+        التوثيق الصحفي والتحليل المرئي والسرد الإنساني، لتكون مرجعًا شاملاً
+        يقرّب صورة التوحد من القارئ بعيدًا عن الصورة النمطية.
+      </p>
+      <p>
+        أُعدّت هذه المنصة كمشروع تخرج ضمن متطلبات قسم الصحافة والنشر
+        بكلية الإعلام، جامعة بنغازي، للعام 2026.
+      </p>
+    </div>
+    <div class="credit-box">
+      <div class="row"><b>إعداد الطالبة</b><span>إهداء بالروين</span></div>
+      <div class="row"><b>تحت إشراف</b><span>د. مي عبد الغني</span></div>
+      <div class="row"><b>الجهة</b><span>جامعة بنغازي — كلية الإعلام</span></div>
+      <div class="row"><b>القسم</b><span>الصحافة والنشر</span></div>
+      <div class="row"><b>السنة</b><span>2026</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand">انتظار</div>
+      <div style="font-size:13px;opacity:.7;max-width:320px;">
+        منصة رقمية تُعنى بمعاناة المصابين بالتوحد في ليبيا
+      </div>
+    </div>
+    <div class="f-links">
+      <a href="#">أخبار</a>
+      <a href="#">مقالات</a>
+      <a href="#">تحقيقات</a>
+      <a href="#">تقارير</a>
+      <a href="#">إنفوجراف</a>
+      <a href="#">من نحن</a>
+    </div>
+  </div>
+  <div class="f-bottom wrap">
+    جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026
+  </div>
+</footer>
+
+<script>
+function filterPosts(cat, navEl){
+  var cards = document.querySelectorAll('.post-card-link');
+  var visibleCount = 0;
+  cards.forEach(function(el){
+    if(cat === 'all' || el.getAttribute('data-cat') === cat){
+      el.style.display = '';
+      visibleCount++;
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  document.getElementById('empty-msg').style.display = visibleCount === 0 ? 'block' : 'none';
+
+  document.querySelectorAll('nav.menu a').forEach(function(a){ a.classList.remove('active'); });
+  if(navEl){
+    navEl.classList.add('active');
+  } else {
+    var match = document.querySelector('nav.menu a[data-filter="'+cat+'"]');
+    if(match) match.classList.add('active');
+  }
+
+  document.getElementById('latest').scrollIntoView({behavior:'smooth', block:'start'});
+  return false;
+}
+</script>
+</body>
+</html>
