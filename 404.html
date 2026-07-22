@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الصفحة غير موجودة | انتظار</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4E4D3; --navy-deep:#0F2740; --terracotta:#D97B3F; --teal:#5C879E; --ink:#2A241F; --white:#FFFCF9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);color:var(--ink);font-family:'Cairo',sans-serif;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+  }
+  a{text-decoration:none;color:inherit;}
+  .code{font-family:'Tajawal';font-size:clamp(70px,14vw,120px);font-weight:900;color:var(--navy-deep);line-height:1;}
+  .puzzle-row{display:flex;justify-content:center;gap:10px;margin:18px 0 24px;}
+  .puzzle-row span{
+    width:16px;height:16px;border-radius:4px;
+    background:var(--terracotta);opacity:.85;
+  }
+  .puzzle-row span:nth-child(2){background:var(--teal);}
+  .puzzle-row span:nth-child(3){background:var(--navy-deep);}
+  h1{font-family:'Tajawal';font-size:24px;color:var(--navy-deep);margin-bottom:12px;}
+  p{color:var(--teal);font-size:15px;max-width:420px;margin:0 auto 30px;}
+  .btn{
+    display:inline-block;background:var(--navy-deep);color:var(--cream);
+    padding:14px 30px;border-radius:8px;font-weight:700;font-size:15px;transition:.2s;
+  }
+  .btn:hover{background:var(--terracotta);}
+</style>
+</head>
+<body>
+  <div>
+    <div class="code">404</div>
+    <div class="puzzle-row"><span></span><span></span><span></span></div>
+    <h1>هذه الصفحة غير موجودة</h1>
+    <p>الرابط الذي حاولت الوصول إليه غير متاح، ربما تم نقله أو حذفه، أو أن العنوان غير صحيح.</p>
+    <a href="/" class="btn">→ الرجوع للصفحة الرئيسية</a>
+  </div>
+</body>
+</html>

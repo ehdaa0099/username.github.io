@@ -54,6 +54,40 @@
   .video-hint{margin-top:18px;font-size:14px;color:var(--teal);}
 
   footer{background:var(--navy-deep);color:#C9BBA8;padding:26px 0;text-align:center;font-size:13px;opacity:.7;}
+
+  .sources-box{
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:20px 24px;margin-top:30px;
+  }
+  .sources-box h3{font-family:'Tajawal';font-size:15px;color:var(--navy-deep);margin-bottom:12px;}
+  .sources-box ul{list-style:none;margin:0;padding:0;}
+  .sources-box li{margin-bottom:8px;font-size:14px;}
+  .sources-box a{color:#1a5fb4;text-decoration:none;}
+  .sources-box a:hover{text-decoration:underline;}
+
+
+  .comment-box{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:28px;margin-top:50px;max-width:800px;
+  }
+  .comment-box h3{font-family:'Tajawal';font-size:17px;color:var(--navy-deep);margin-bottom:18px;}
+  .comment-box input, .comment-box textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;
+    background:var(--cream);color:var(--ink);
+  }
+  .comment-box textarea{min-height:80px;resize:vertical;}
+  .comment-box button{
+    background:var(--navy-deep);color:var(--cream);border:none;padding:11px 24px;
+    border-radius:8px;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;
+    font-size:14px;transition:.2s;
+  }
+  .comment-box button:hover{background:var(--terracotta);}
+  .comment-item{
+    background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px;
+  }
+  .comment-item b{color:var(--navy-deep);display:block;margin-bottom:4px;font-size:13.5px;}
+
 </style>
 </head>
 <body>
@@ -73,9 +107,50 @@
     <div class="play-overlay"><div class="play-btn"></div></div>
   </a>
   <div class="video-hint">اضغط على الفيديو للمشاهدة على يوتيوب ↗</div>
+
+  <div class="sources-box" style="max-width:800px;width:100%;text-align:right;margin-top:40px;">
+    <h3>مصادر ذات صلة</h3>
+    <ul>
+      <li><a href="https://almenassa.ly/2026/04/10/%D8%B3%D8%A8%D9%87%D8%A7-2/" target="_blank" rel="noopener">المنصة الليبية ↗</a></li>
+      <li><a href="https://www.abadc.com.sa/autism-diagnosis-criteria-dsm-5/?srsltid=AfmBOorHYRdqKLZGbnBdyr9RXk0kZx0JEu1oyQrZuH71I3t7AoDRGH9p" target="_blank" rel="noopener">معايير تشخيص التوحد وفق DSM-5 ↗</a></li>
+      <li><a href="https://delta-medlab.com/blog/%D8%AA%D8%B4%D8%AE%D9%8A%D8%B5-%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D8%AF-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A3%D9%87%D9%85-%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA/" target="_blank" rel="noopener">دلتا ميدلاب: تشخيص التوحد — أهم الاختبارات ↗</a></li>
+    </ul>
+  </div>
 </main>
 
+  <div class="wrap" style="padding-bottom:60px;">
+  <div class="comment-box" style="margin:0 auto;">
+    <h3>💬 ضع تعليقك</h3>
+    <input type="text" id="c-name" placeholder="اسمك">
+    <textarea id="c-text" placeholder="اكتب تعليقك هنا..."></textarea>
+    <button onclick="addComment()">نشر التعليق</button>
+    <div id="c-list"></div>
+  </div>
+  </div>
+
 <footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+<script>
+function addComment(){
+  var nameEl = document.getElementById('c-name');
+  var textEl = document.getElementById('c-text');
+  var name = nameEl.value.trim();
+  var text = textEl.value.trim();
+  if(!name || !text){ alert('الرجاء كتابة الاسم والتعليق'); return; }
+  var list = document.getElementById('c-list');
+  var item = document.createElement('div');
+  item.className = 'comment-item';
+  var b = document.createElement('b');
+  b.textContent = name;
+  var p = document.createElement('div');
+  p.textContent = text;
+  item.appendChild(b);
+  item.appendChild(p);
+  list.insertBefore(item, list.firstChild);
+  nameEl.value = '';
+  textEl.value = '';
+}
+</script>
 
 </body>
 </html>

@@ -59,6 +59,43 @@
   .closing .q{font-family:'Tajawal';font-size:19px;font-weight:700;color:var(--terracotta-light);margin-top:16px;}
 
   footer{background:var(--navy-deep);color:#C9BBA8;padding:30px 0;text-align:center;font-size:13px;opacity:.7;}
+
+  /* ===== Active Words (clickable glossary terms) ===== */
+  .active-word{
+    cursor:pointer;
+    color:#1a5fb4;
+    text-decoration:none;
+    transition:.2s;
+  }
+  .active-word:hover{color:#0d3f82;}
+  .active-word.active{
+    color:#0d3f82;
+    font-weight:700;
+  }
+
+
+  .comment-box{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:28px;margin-top:50px;max-width:800px;
+  }
+  .comment-box h3{font-family:'Tajawal';font-size:17px;color:var(--navy-deep);margin-bottom:18px;}
+  .comment-box input, .comment-box textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;
+    background:var(--cream);color:var(--ink);
+  }
+  .comment-box textarea{min-height:80px;resize:vertical;}
+  .comment-box button{
+    background:var(--navy-deep);color:var(--cream);border:none;padding:11px 24px;
+    border-radius:8px;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;
+    font-size:14px;transition:.2s;
+  }
+  .comment-box button:hover{background:var(--terracotta);}
+  .comment-item{
+    background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px;
+  }
+  .comment-item b{color:var(--navy-deep);display:block;margin-bottom:4px;font-size:13.5px;}
+
 </style>
 </head>
 <body>
@@ -71,7 +108,7 @@
 </header>
 
 <div class="hero wrap">
-  <span class="tag">مقال سردي</span>
+  <span class="tag">إهداء بالروين</span>
   <h1 class="title">لا يراهم أحد</h1>
   <div class="meta"><span>~٣ دقائق قراءة</span><span>—</span><span>مقالات</span></div>
   <div class="lead-box">
@@ -81,11 +118,11 @@
 
 <article class="wrap">
 
-  <p>عندما كنت في الصف الرابع الابتدائي، كانت معلمة اللغة العربية تطلب منا واجباتٍ بشكلٍ مستمر، كم كنت أكره هذه المعلمة، لأنني كنتُ أعاني حتى أستطيع أداء هذه الواجبات.</p>
+  <p>عندما كنت في الصف الرابع الابتدائي، كانت معلمة اللغة العربية تطلب منا <span class="active-word" onclick="searchWord(this)">واجباتٍ بشكلٍ مستمر</span>، كم كنت أكره هذه المعلمة، لأنني كنتُ أعاني حتى <span class="active-word" onclick="searchWord(this)">أستطيع أداء هذه الواجبات</span>.</p>
 
-  <p>كان أخي المصاب بالتوحد يبلغُ من العمر 6 سنوات حينها، وكان عندما يرى الضوء يصرخ بأعلى صوتٍ، ويخبط برجليه على الأرض، وقد يصلُ الأمر إلى الهجوم علينا، ولا يتوقف عن فعل ذلك حتى إطفاء النور. كنا مضطرين أن نعيش في ظلامٍ دامس، بعد أن يختفي ضوء النهار.</p>
+  <p>كان أخي المصاب بالتوحد <span class="active-word" onclick="searchWord(this)">يبلغُ من العمر 6 سنوات</span> حينها، وكان عندما يرى الضوء يصرخ بأعلى صوتٍ، ويخبط برجليه على الأرض، وقد يصلُ الأمر إلى الهجوم علينا، ولا يتوقف عن فعل ذلك حتى إطفاء النور. كنا مضطرين أن نعيش في ظلامٍ دامس، بعد أن يختفي ضوء النهار.</p>
 
-  <p>كنت أغلق باب الغرفة، وأضطر أن أغطي حاشية الباب بقماش، حتى لا يرى أخي الضوء، فتبدأ نوبة الغضب. في مرات كثيرة، كان أخي ينتبه لهذه الحيلة، فأضطر أنا أن أؤدي الواجب في وسط الصراخ والأجواء المتوترة، وأحيانًا على ضوء التلفاز. في ذات مرة قلت لأختي: أتمنى الموت لمعلمة اللغة العربية التي لا تكف عن طلب الواجبات، وأختي ترد: "وين تندري هي على وضعنا وعيشتنا السودة".</p>
+  <p>كنت أغلق باب الغرفة، وأضطر أن أغطي <span class="active-word" onclick="searchWord(this)">حاشية الباب بقماش</span>، حتى لا يرى أخي الضوء، فتبدأ <span class="active-word" onclick="searchWord(this)">نوبة الغضب</span>. في مرات كثيرة، كان أخي ينتبه لهذه الحيلة، فأضطر أنا أن أؤدي الواجب في وسط الصراخ والأجواء المتوترة، وأحيانًا على <span class="active-word" onclick="searchWord(this)">ضوء التلفاز</span>. في ذات مرة قلت لأختي: أتمنى الموت لمعلمة اللغة العربية التي لا تكف عن طلب الواجبات، وأختي ترد: "وين تندري هي على وضعنا وعيشتنا السودة".</p>
 
   <p>لطالما تمنيت أن يعلم الآخرون كيف تعيش أخت المصاب بالتوحد؟ في وضع غير مستقر نفسيًا واجتماعيًا، فما يعتبره الآخرون أمورًا عادية وبديهية في حياتهم، مثل حضور المناسبات الاجتماعية، السفر، الذهاب إلى الأسواق، الخروج إلى الأماكن العامة، هي بالنسبة لنا نِعَمٌ نتمنى أن نمتلكها. وإن قمنا بها، نقوم بها بشكلٍ متفرق، إذ يجب أن يضحي أحدنا ويبقى مع أخي المصاب من أجل أن يذهب الآخرون. وإن خرجنا مثل أي عائلة مع بعضنا، ومعنا أخي التوحدي، لا ترحمنا نظرات الآخرين عندما يقوم بسلوكياته المعتادة.</p>
 
@@ -98,11 +135,11 @@
 
   <p>كم تؤلمني سخرية الآخرين وتهكمهم على أخي، عندما يقوم بحركاتٍ تكراريةٍ معينة، تُعتبر من السلوكيات النمطية للتوحدي، مثل رفرفة اليدين، الأصوات العشوائية، الدوران، أو المشي على أطراف الأصابع.</p>
 
-  <p>وكم موجعٍ عندما أرى أمي تحاول أن تخبئ نظرات الأسى والوجع، بعد أن تقوم بتحميم أخي البالغ اليوم من العمر 18 عامًا. وعندما ترى أقرانه يجتازون امتحانات الشهادة الثانوية. وعندما يمرض أخي ولا يستطيع أن يفهم ويعبر عن الألم الذي يشعر به.</p>
+  <p>وكم موجعٍ عندما أرى أمي تحاول أن تخبئ نظرات الأسى والوجع، بعد أن تقوم بتحميم أخي البالغ اليوم من العمر 18 عامًا. وعندما ترى أقرانه يجتازون امتحانات <span class="active-word" onclick="searchWord(this)">الشهادة الثانوية</span>. وعندما يمرض أخي ولا يستطيع أن يفهم ويعبر عن الألم الذي يشعر به.</p>
 
   <p class="pull-quote">أتذكر أن أمي كانت دائمًا تتمنى أن تكون من الذين يدخلون الجنة بغير حساب، ولا سابقة عذاب، فكان لها ما تمنت.</p>
 
-  <p>فهي اليوم أم لمصاب بالتوحد، تتحمل نوبات غضبه وتعنيفه، وتحمل همه ليلًا ونهارًا، وتعيش حرمانًا ومعاناة لا يشعر بها إلا من عاشها، فبالتأكيد سوف يجازيها الله عن صبرها على هذا البلاء الجنة بدون حساب.</p>
+  <p>فهي اليوم أم لمصاب بالتوحد، تتحمل نوبات غضبه وتعنيفه، وتحمل همه ليلًا ونهارًا، وتعيش حرمانًا ومعاناة لا يشعر بها إلا من عاشها، فبالتأكيد سوف <span class="active-word" onclick="searchWord(this)">يجازيها الله عن صبرها على هذا البلاء</span> الجنة بدون حساب.</p>
 
   <div class="closing">
     <p>نحن عائلة المصاب بالتوحد، لا يرى أحد الوجع الذي نتعايش معه بشكلٍ يومي، ولا أعلم إلى متى سنبقى من الذين لا يراهم أحد...</p>
@@ -111,7 +148,45 @@
 
 </article>
 
+  <div class="comment-box">
+    <h3>💬 ضع تعليقك</h3>
+    <input type="text" id="c-name" placeholder="اسمك">
+    <textarea id="c-text" placeholder="اكتب تعليقك هنا..."></textarea>
+    <button onclick="addComment()">نشر التعليق</button>
+    <div id="c-list"></div>
+  </div>
+
 <footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+<script>
+function searchWord(el){
+  el.classList.add('active');
+  var q = encodeURIComponent(el.textContent.trim());
+  window.open('https://www.google.com/search?q=' + q, '_blank');
+}
+</script>
+
+<script>
+function addComment(){
+  var nameEl = document.getElementById('c-name');
+  var textEl = document.getElementById('c-text');
+  var name = nameEl.value.trim();
+  var text = textEl.value.trim();
+  if(!name || !text){ alert('الرجاء كتابة الاسم والتعليق'); return; }
+  var list = document.getElementById('c-list');
+  var item = document.createElement('div');
+  item.className = 'comment-item';
+  var b = document.createElement('b');
+  b.textContent = name;
+  var p = document.createElement('div');
+  p.textContent = text;
+  item.appendChild(b);
+  item.appendChild(p);
+  list.insertBefore(item, list.firstChild);
+  nameEl.value = '';
+  textEl.value = '';
+}
+</script>
 
 </body>
 </html>

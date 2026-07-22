@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إطلاق برنامج لتطوير الكوادر بمركز بنغازي للتوحد | انتظار</title>
+<title>إطلاق برنامج لتطوير الكوادر ب<span class="active-word" onclick="searchWord(this)">مركز بنغازي للتوحد</span> | انتظار</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -44,6 +44,54 @@
   .source-box b{color:var(--navy-deep);}
 
   footer{background:var(--navy-deep);color:#C9BBA8;padding:30px 0;text-align:center;font-size:13px;opacity:.7;}
+
+  /* ===== Active Words (clickable glossary terms) ===== */
+  .active-word{
+    cursor:pointer;
+    color:#1a5fb4;
+    text-decoration:none;
+    transition:.2s;
+  }
+  .active-word:hover{color:#0d3f82;}
+  .active-word.active{
+    color:#0d3f82;
+    font-weight:700;
+  }
+
+
+  .sources-box{
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:20px 24px;margin-top:30px;
+  }
+  .sources-box h3{font-family:'Tajawal';font-size:15px;color:var(--navy-deep);margin-bottom:12px;}
+  .sources-box ul{list-style:none;margin:0;padding:0;}
+  .sources-box li{margin-bottom:8px;font-size:14px;}
+  .sources-box a{color:#1a5fb4;text-decoration:none;}
+  .sources-box a:hover{text-decoration:underline;}
+
+
+  .comment-box{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:28px;margin-top:50px;max-width:800px;
+  }
+  .comment-box h3{font-family:'Tajawal';font-size:17px;color:var(--navy-deep);margin-bottom:18px;}
+  .comment-box input, .comment-box textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;
+    background:var(--cream);color:var(--ink);
+  }
+  .comment-box textarea{min-height:80px;resize:vertical;}
+  .comment-box button{
+    background:var(--navy-deep);color:var(--cream);border:none;padding:11px 24px;
+    border-radius:8px;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;
+    font-size:14px;transition:.2s;
+  }
+  .comment-box button:hover{background:var(--terracotta);}
+  .comment-item{
+    background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px;
+  }
+  .comment-item b{color:var(--navy-deep);display:block;margin-bottom:4px;font-size:13.5px;}
+
 </style>
 </head>
 <body>
@@ -66,16 +114,62 @@
     <img src="assets/images/news/barnamaj.jpeg" alt="حملة أطفال ليبيا أولاً - مؤسسة خليفة الدولية">
   </figure>
 
-  <p>أعلنت مؤسسة خليفة الدولية للأعمال الإنسانية، عبر صفحتها الرسمية على فيسبوك، عن انطلاق برنامج تدريبي متخصص بمركز بنغازي للتوحد، ضمن جهودها لدعم وتطوير أساليب التأهيل للمصابين بالتوحد.</p>
+  <p>أعلنت مؤسسة خليفة الدولية للأعمال الإنسانية، عبر صفحتها الرسمية على <span class="active-word" onclick="searchWord(this)">فيسبوك</span>، عن انطلاق برنامج تدريبي متخصص بمركز بنغازي للتوحد، ضمن جهودها لدعم وتطوير أساليب التأهيل للمصابين بالتوحد.</p>
 
   <p>وأشارت المؤسسة إلى أن البرنامج يتضمن تنفيذ سلسلة من الأنشطة تشمل التعريف بالبرنامج، إلى جانب تدريب الكوادر الطبية والفنية ورفع كفاءتها.</p>
 
   <p>ويأتي هذا البرنامج ضمن خطة تدريبية تمتد لستة أسابيع، بتكليف أخصائي دولي لكل أسبوعين، تهدف إلى بناء الكوادر المحلية، وتطوير منظومة التأهيل والتشخيص في مجال التوحد داخل ليبيا.</p>
 
   <div class="source-box"><b>المصدر:</b> مؤسسة خليفة الدولية للأعمال الإنسانية</div>
+
+  <div class="sources-box">
+    <h3>مصادر ذات صلة</h3>
+    <ul>
+      <li><a href="https://www.lananews.com/ar/?p=329106" target="_blank" rel="noopener">وكالة لانا نيوز ↗</a></li>
+    </ul>
+  </div>
+
 </article>
 
+  <div class="comment-box">
+    <h3>💬 ضع تعليقك</h3>
+    <input type="text" id="c-name" placeholder="اسمك">
+    <textarea id="c-text" placeholder="اكتب تعليقك هنا..."></textarea>
+    <button onclick="addComment()">نشر التعليق</button>
+    <div id="c-list"></div>
+  </div>
+
 <footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+<script>
+function searchWord(el){
+  el.classList.add('active');
+  var q = encodeURIComponent(el.textContent.trim());
+  window.open('https://www.google.com/search?q=' + q, '_blank');
+}
+</script>
+
+<script>
+function addComment(){
+  var nameEl = document.getElementById('c-name');
+  var textEl = document.getElementById('c-text');
+  var name = nameEl.value.trim();
+  var text = textEl.value.trim();
+  if(!name || !text){ alert('الرجاء كتابة الاسم والتعليق'); return; }
+  var list = document.getElementById('c-list');
+  var item = document.createElement('div');
+  item.className = 'comment-item';
+  var b = document.createElement('b');
+  b.textContent = name;
+  var p = document.createElement('div');
+  p.textContent = text;
+  item.appendChild(b);
+  item.appendChild(p);
+  list.insertBefore(item, list.firstChild);
+  nameEl.value = '';
+  textEl.value = '';
+}
+</script>
 
 </body>
 </html>

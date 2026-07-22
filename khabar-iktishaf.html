@@ -44,6 +44,54 @@
   .source-box b{color:var(--navy-deep);}
 
   footer{background:var(--navy-deep);color:#C9BBA8;padding:30px 0;text-align:center;font-size:13px;opacity:.7;}
+
+  /* ===== Active Words (clickable glossary terms) ===== */
+  .active-word{
+    cursor:pointer;
+    color:#1a5fb4;
+    text-decoration:none;
+    transition:.2s;
+  }
+  .active-word:hover{color:#0d3f82;}
+  .active-word.active{
+    color:#0d3f82;
+    font-weight:700;
+  }
+
+
+  .sources-box{
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:20px 24px;margin-top:30px;
+  }
+  .sources-box h3{font-family:'Tajawal';font-size:15px;color:var(--navy-deep);margin-bottom:12px;}
+  .sources-box ul{list-style:none;margin:0;padding:0;}
+  .sources-box li{margin-bottom:8px;font-size:14px;}
+  .sources-box a{color:#1a5fb4;text-decoration:none;}
+  .sources-box a:hover{text-decoration:underline;}
+
+
+  .comment-box{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:28px;margin-top:50px;max-width:800px;
+  }
+  .comment-box h3{font-family:'Tajawal';font-size:17px;color:var(--navy-deep);margin-bottom:18px;}
+  .comment-box input, .comment-box textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;
+    background:var(--cream);color:var(--ink);
+  }
+  .comment-box textarea{min-height:80px;resize:vertical;}
+  .comment-box button{
+    background:var(--navy-deep);color:var(--cream);border:none;padding:11px 24px;
+    border-radius:8px;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;
+    font-size:14px;transition:.2s;
+  }
+  .comment-box button:hover{background:var(--terracotta);}
+  .comment-item{
+    background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px;
+  }
+  .comment-item b{color:var(--navy-deep);display:block;margin-bottom:4px;font-size:13.5px;}
+
 </style>
 </head>
 <body>
@@ -66,20 +114,66 @@
     <img src="assets/images/news/iktishaf.jpeg" alt="طفل يغطي أذنيه">
   </figure>
 
-  <p>اكتشفَ الباحثون في جامعة جونز هوبكنز الأمريكية مجموعةً من الخلايا العصبية في جذع الدماغ، مسؤولةً عن تنظيم الانتباه والتركيز.</p>
+  <p>اكتشفَ الباحثون في <span class="active-word" onclick="searchWord(this)">جامعة جونز هوبكنز</span> الأمريكية مجموعةً من <span class="active-word" onclick="searchWord(this)">الخلايا العصبية</span> في جذع الدماغ، مسؤولةً عن تنظيم <span class="active-word" onclick="searchWord(this)">الانتباه</span> والتركيز.</p>
 
-  <p>وبحسب الباحث المختص في دراسة الدوائر العصبية المرتبطة بالسلوك "شريش ميسور"، عندما قاموا بإجراء تجارب على الفئران، وعُطِّلت هذه الخلايا العصبية لديها؛ أصبحت الفئران تُشَتَّت بسهولة، حتى مع محفزات بسيطة. وعند إعادة تنشيط الخلايا في اليوم التالي، استعادت الفئران قدرتها على التركيز وتجاهل المشتتات.</p>
+  <p>وبحسب الباحث المختص في دراسة الدوائر العصبية المرتبطة بالسلوك "شريش ميسور"، عندما قاموا بإجراء تجارب على <span class="active-word" onclick="searchWord(this)">الفئران</span>، وعُطِّلت هذه <span class="active-word" onclick="searchWord(this)">الخلايا العصبية</span> لديها؛ أصبحت <span class="active-word" onclick="searchWord(this)">الفئران</span> تُشَتَّت بسهولة، حتى مع محفزات بسيطة. وعند إعادة تنشيط الخلايا في اليوم التالي، استعادت <span class="active-word" onclick="searchWord(this)">الفئران</span> قدرتها على التركيز وتجاهل المشتتات.</p>
 
-  <p>وهذا ما يثبت أن هذه الخلايا تساعد الدماغ على تجاهل المشتتات، ولها دور مباشر في التحكم بالانتباه.</p>
+  <p>وهذا ما يثبت أن هذه الخلايا تساعد الدماغ على تجاهل المشتتات، ولها دور مباشر في التحكم ب<span class="active-word" onclick="searchWord(this)">الانتباه</span>.</p>
 
-  <p>سابقًا كان يعتقد العلماء أن الانتباه يعتمد فقط على قشرة الفص الجبهي (جزء متطور في الدماغ عند البشر والرئيسيات). لكن بحسب الباحث "نيناد كوثاري"، هذا الاكتشاف يوضح أن هناك آلية عصبية أقدم تطوريًا موجودة في جذع الدماغ، وهي مسؤولة أيضًا عن الانتباه.</p>
+  <p>سابقًا كان يعتقد العلماء أن <span class="active-word" onclick="searchWord(this)">الانتباه</span> يعتمد فقط على <span class="active-word" onclick="searchWord(this)">قشرة الفص الجبهي</span> (جزء متطور في الدماغ عند البشر والرئيسيات). لكن بحسب الباحث "نيناد كوثاري"، هذا الاكتشاف يوضح أن هناك آلية عصبية أقدم تطوريًا موجودة في جذع الدماغ، وهي مسؤولة أيضًا عن <span class="active-word" onclick="searchWord(this)">الانتباه</span>.</p>
 
-  <p>ورغم أن هذه النتائج حتى الآن مبنية على تجارب على الفئران فقط، ولا يمكن تطبيقها مباشرة على البشر قبل إجراء المزيد من الدراسات، يرى الفريق العلمي أنه إذا وُجدت هذه الخلايا عند البشر، فقد يكون بالإمكان تطوير علاجات دقيقة لاضطرابات فرط الحركة ونقص الانتباه والتوحد.</p>
+  <p>ورغم أن هذه النتائج حتى الآن مبنية على تجارب على <span class="active-word" onclick="searchWord(this)">الفئران</span> فقط، ولا يمكن تطبيقها مباشرة على البشر قبل إجراء المزيد من الدراسات، يرى الفريق العلمي أنه إذا وُجدت هذه الخلايا عند البشر، فقد يكون بالإمكان تطوير علاجات دقيقة لاضطرابات <span class="active-word" onclick="searchWord(this)">فرط الحركة ونقص الانتباه والتوحد</span>.</p>
 
   <div class="source-box"><b>المصدر:</b> وكالة الأنباء الليبية</div>
+
+  <div class="sources-box">
+    <h3>مصادر ذات صلة</h3>
+    <ul>
+      <li><a href="https://www.dw.com/ar/%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9-%D8%AC%D9%8A%D9%86%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%AA%D9%83%D8%B4%D9%81-%D8%B9%D9%86-%D8%A3%D8%B1%D8%A8%D8%B9%D8%A9-%D8%A3%D9%86%D9%88%D8%A7%D8%B9-%D9%81%D8%B1%D8%B9%D9%8A%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D8%AF/a-73555976" target="_blank" rel="noopener">DW عربية: دراسة جينية جديدة تكشف عن أربعة أنواع فرعية من التوحد ↗</a></li>
+      <li><a href="https://www-genedx-com.translate.goog/blog/autism-breakthrough-research?_x_tr_sl=auto&_x_tr_tl=ar&_x_tr_hl=ar&_x_tr_pto=tc" target="_blank" rel="noopener">GeneDX: Autism Breakthrough Research ↗</a></li>
+    </ul>
+  </div>
 </article>
 
+  <div class="comment-box">
+    <h3>💬 ضع تعليقك</h3>
+    <input type="text" id="c-name" placeholder="اسمك">
+    <textarea id="c-text" placeholder="اكتب تعليقك هنا..."></textarea>
+    <button onclick="addComment()">نشر التعليق</button>
+    <div id="c-list"></div>
+  </div>
+
 <footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+<script>
+function searchWord(el){
+  el.classList.add('active');
+  var q = encodeURIComponent(el.textContent.trim());
+  window.open('https://www.google.com/search?q=' + q, '_blank');
+}
+</script>
+
+<script>
+function addComment(){
+  var nameEl = document.getElementById('c-name');
+  var textEl = document.getElementById('c-text');
+  var name = nameEl.value.trim();
+  var text = textEl.value.trim();
+  if(!name || !text){ alert('الرجاء كتابة الاسم والتعليق'); return; }
+  var list = document.getElementById('c-list');
+  var item = document.createElement('div');
+  item.className = 'comment-item';
+  var b = document.createElement('b');
+  b.textContent = name;
+  var p = document.createElement('div');
+  p.textContent = text;
+  item.appendChild(b);
+  item.appendChild(p);
+  list.insertBefore(item, list.firstChild);
+  nameEl.value = '';
+  textEl.value = '';
+}
+</script>
 
 </body>
 </html>

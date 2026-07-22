@@ -56,6 +56,29 @@
   .video-hint{margin-top:18px;font-size:14px;color:var(--teal);}
 
   footer{background:var(--navy-deep);color:#C9BBA8;padding:26px 0;text-align:center;font-size:13px;opacity:.7;}
+
+  .comment-box{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:28px;margin-top:50px;max-width:800px;
+  }
+  .comment-box h3{font-family:'Tajawal';font-size:17px;color:var(--navy-deep);margin-bottom:18px;}
+  .comment-box input, .comment-box textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;
+    background:var(--cream);color:var(--ink);
+  }
+  .comment-box textarea{min-height:80px;resize:vertical;}
+  .comment-box button{
+    background:var(--navy-deep);color:var(--cream);border:none;padding:11px 24px;
+    border-radius:8px;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;
+    font-size:14px;transition:.2s;
+  }
+  .comment-box button:hover{background:var(--terracotta);}
+  .comment-item{
+    background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px;
+  }
+  .comment-item b{color:var(--navy-deep);display:block;margin-bottom:4px;font-size:13.5px;}
+
 </style>
 </head>
 <body>
@@ -81,7 +104,39 @@
   <div class="video-hint">اضغط على الفيديو للمشاهدة على يوتيوب ↗</div>
 </main>
 
+  <div class="wrap" style="padding-bottom:60px;">
+  <div class="comment-box" style="margin:0 auto;">
+    <h3>💬 ضع تعليقك</h3>
+    <input type="text" id="c-name" placeholder="اسمك">
+    <textarea id="c-text" placeholder="اكتب تعليقك هنا..."></textarea>
+    <button onclick="addComment()">نشر التعليق</button>
+    <div id="c-list"></div>
+  </div>
+  </div>
+
 <footer>جامعة بنغازي · كلية الإعلام · قسم الصحافة والنشر — 2026</footer>
+
+<script>
+function addComment(){
+  var nameEl = document.getElementById('c-name');
+  var textEl = document.getElementById('c-text');
+  var name = nameEl.value.trim();
+  var text = textEl.value.trim();
+  if(!name || !text){ alert('الرجاء كتابة الاسم والتعليق'); return; }
+  var list = document.getElementById('c-list');
+  var item = document.createElement('div');
+  item.className = 'comment-item';
+  var b = document.createElement('b');
+  b.textContent = name;
+  var p = document.createElement('div');
+  p.textContent = text;
+  item.appendChild(b);
+  item.appendChild(p);
+  list.insertBefore(item, list.firstChild);
+  nameEl.value = '';
+  textEl.value = '';
+}
+</script>
 
 </body>
 </html>
